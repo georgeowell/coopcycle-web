@@ -94,6 +94,10 @@ class SettingsManager
                     try {
                         $value = $this->phoneNumberUtil->parse($value, strtoupper($this->country));
                     } catch (NumberParseException $e) {}
+                    break;
+                case 'sms_enabled':
+                    $value = (bool) $value;
+                    break;
             }
 
             $this->cache[$name] = $value;
@@ -211,6 +215,11 @@ class SettingsManager
         foreach ($keys as $name) {
             try {
                 $value = $this->craueConfig->get($name);
+
+                if ($name === 'sms_enabled') {
+                    $value = (bool) $value;
+                }
+
                 $settings->$name = $value;
             } catch (\RuntimeException $e) {}
         }
