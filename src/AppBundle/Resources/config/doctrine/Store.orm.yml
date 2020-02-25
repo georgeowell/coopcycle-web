@@ -64,6 +64,9 @@ AppBundle\Entity\Store:
             type: string
             nullable: true
             column: check_expression
+        smsEnabled:
+            type: boolean
+            column: sms_enabled
     manyToOne:
         address:
             targetEntity: AppBundle\Entity\Address
