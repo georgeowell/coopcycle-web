@@ -151,6 +151,37 @@ class SettingsManager
         }
     }
 
+    public function canSendSms()
+    {
+        if (!$this->get('sms_enabled')) {
+
+            return false;
+        }
+
+        $smsGateway = $this->get('sms_gateway');
+
+        if ('mailjet' !== $smsGateway) {
+
+            return false;
+        }
+
+        $smsGatewayConfig = $this->get('sms_gateway_config');
+
+        if (empty($smsGatewayConfig)) {
+
+            return false;
+        }
+
+        $smsGatewayConfig = json_decode($smsGatewayConfig, true);
+
+        if (empty($smsGatewayConfig)) {
+
+            return false;
+        }
+
+        return isset($smsGatewayConfig['api_token']);
+    }
+
     public function set($name, $value, $section = null)
     {
         $className = $this->configEntityName;
