@@ -840,3 +840,7 @@ basics.none: Aucun
 basics.yes: Oui
 basics.no: Non
 notifications.messenger_approaching: Bonjour %customer% ! Votre livreur·se %messenger% est tout·e proche. Tenez-vous prêt·e !
+sms.tracking: |
+  Bonjour,
+  Votre livraison est en cours.
+  Suivez l'avancement sur %link%

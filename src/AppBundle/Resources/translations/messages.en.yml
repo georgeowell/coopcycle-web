@@ -825,3 +825,7 @@ basics.none: None
 basics.yes: 'Yes'
 basics.no: 'No'
 notifications.messenger_approaching: Hey %customer%! Our messenger %messenger% is nearly with you. Get ready!
+sms.tracking: |
+  Hello,
+  Your delivery is on its way.
+  Track it on %link%
