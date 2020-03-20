@@ -765,3 +765,5 @@ services:
       $secret: '%secret%'
 
   AppBundle\Service\MaintenanceManager: ~
+
+  AppBundle\Service\SmsManager: ~
